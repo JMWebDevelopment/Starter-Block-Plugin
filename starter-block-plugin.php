@@ -63,7 +63,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-starter-block-plugin.
  * @since    1.0.0
  */
 function run_starter_block_plugin() {
-	$plugin = new Starter_Plugin();
+	$plugin = new Starter_Block_Plugin();
 	$plugin->run();
 }
 

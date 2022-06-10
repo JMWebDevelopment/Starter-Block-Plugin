@@ -43,4 +43,21 @@ class Starter_Block_Plugin_Blocks {
 		$this->version = $version;
 	}
 
+	public function starter_block_plugin_blocks_init() {
+		register_block_type( __DIR__ . '/starter-block/build' );
+	}
+
+	public function space_rocket_blocks_categories( $categories, $post ) {
+		return array_merge(
+			$categories,
+			array(
+				array(
+					'slug' => 'starter-block-plugins-blocks',
+					'title' => __( 'Starter Block Plugin Blocks', 'starter-block-plugin' ),
+					'icon'  => 'wordpress',
+				),
+			)
+		);
+	}
+
 }

@@ -72,6 +72,7 @@ class Starter_Block_Plugin {
 		$this->define_setup_hooks();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_blocks_hooks();
 
 	}
 
@@ -85,7 +86,8 @@ class Starter_Block_Plugin {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-starter-block-plugin-i18n.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-starter-block-plugin-setup.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-starter-block-plugin-admin.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-starter-plugin-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-starter-block-plugin-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'blocks/class-starter-block-plugin-blocks.php';
 
 		require_once plugin_dir_path( __FILE__ ) . 'class-starter-block-plugin-loader.php';
 		$this->loader = new Starter_Block_Plugin_Loader();
@@ -133,6 +135,17 @@ class Starter_Block_Plugin {
 	 */
 	private function define_public_hooks() {
 		$public = new Starter_Block_Plugin_Public( $this->get_version() );
+	}
+
+	/**
+	 * Runs all of the block hooks for the plugin.
+	 *
+	 * @since 1.0.0
+	 */
+	private function define_blocks_hooks() {
+		$blocks = new Starter_Block_Plugin_Blocks( $this->get_version() );
+		$this->loader->add_action( 'init', $blocks, 'starter_block_plugin_blocks_init' );
+		$this->loader->add_action( 'block_categories', $blocks, 'space_rocket_blocks_categories', 10, 2 );
 	}
 
 	/**
