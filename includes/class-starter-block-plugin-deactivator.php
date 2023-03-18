@@ -20,7 +20,7 @@ namespace Starter_Block_Plugin;
  * @package    Starter_Block_Plugin
  * @subpackage Starter_Block_Plugin/includes
  */
-class Starter_Plugin_Deactivator {
+class Starter_Block_Plugin_Deactivator {
 
 	/**
 	 * Runs code when the plugin is deactivated.
