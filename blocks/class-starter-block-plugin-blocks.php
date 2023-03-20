@@ -44,7 +44,7 @@ class Starter_Block_Plugin_Blocks {
 	}
 
 	public function starter_block_plugin_blocks_init() {
-		register_block_type( __DIR__ . '/starter-block/build' );
+		register_block_type( __DIR__ . '/build/starter-block/' );
 	}
 
 	public function space_rocket_blocks_categories( $categories, $post ) {

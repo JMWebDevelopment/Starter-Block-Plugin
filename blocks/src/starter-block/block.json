@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "starter-block-plugin/starter-block",
+	"name": "create-block/starter-block",
 	"version": "0.1.0",
-	"title": "Starter Block Plugin Block",
-	"category": "starter-block-plugins-blocks",
+	"title": "Starter Block",
+	"category": "widgets",
 	"icon": "smiley",
-	"description": "Put a description here",
+	"description": "Example block scaffolded with Create Block tool for a block plugin.",
 	"supports": {
 		"html": false
 	},
